@@ -22,8 +22,17 @@ Navigate to the source folder of your catkin workspace, download and build the s
 ```
 cd ~/catkin_ws/src
 git clone https://github.com/catkin/catkin_simple.git
+
 git clone https://github.com/ethz-asl/rotors_simulator.git
+cd rotors_simulator
+git checkout bf3f59
+cd ..
+
 git clone https://github.com/ethz-asl/mav_comm.git
+cd mav_comm
+git checkout eae7c76
+cd ..
+
 git clone https://github.com/vsu91/ewok.git
 cd ../
 catkin_make
