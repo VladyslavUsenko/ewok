@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="default">
+
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- A ground plane -->
+    <include>
+      <uri>model://asphalt_plane</uri>
+    </include>
+
+    <!-- Testing the automatic population of objects -->
+    <population name="population1">
+      <model name="wooden_cylinder1">
+        <include>
+          <static>true</static>
+          <uri>model://wooden_cylinder</uri>
+        </include>
+      </model>
+      <pose>0 0 0 0 0 0</pose>
+      <box>
+        <size>25 25 0.01</size>
+      </box>
+      <model_count>50</model_count>
+      <distribution>
+        <type>uniform</type>
+      </distribution>
+    </population>
+
+  </world>
+</sdf>

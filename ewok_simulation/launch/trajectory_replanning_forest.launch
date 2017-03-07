@@ -1,0 +1,72 @@
+<launch>
+  <arg name="mav_name" default="firefly"/>
+  <arg name="world_name" default="forest0"/>
+  <arg name="enable_logging" default="false" />
+  <arg name="enable_ground_truth" default="true" />
+  <arg name="log_file" default="$(arg mav_name)" />
+  <arg name="paused" value="true"/>
+
+  <arg name="start_x" value="-15.0"/>
+  <arg name="start_y" value="15.0"/>
+  <arg name="start_z" value="0.6"/>
+  <arg name="start_yaw" value="$(eval -pi/4)"/>
+
+  <arg name="middle_x" value="0.0"/>
+  <arg name="middle_y" value="0.0"/>
+  <arg name="middle_z" value="0.6"/>
+  <arg name="middle_yaw" value="$(eval -pi/4)"/>
+
+  <arg name="stop_x" value="5.0"/>
+  <arg name="stop_y" value="-15.0"/>
+  <arg name="stop_z" value="0.6"/>
+  <arg name="stop_yaw" value="$(eval -pi/4)"/>
+
+  <env name="GAZEBO_MODEL_PATH" value="$(find rotors_gazebo)/models"/>
+  <env name="GAZEBO_RESOURCE_PATH" value="$(find forest_gen)"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find forest_gen)/worlds/$(arg world_name).world" />
+    <!-- <arg name="debug" value="true"/> -->
+    <arg name="paused" value="$(arg paused)"/>
+    <!-- <arg name="gui" value="false"/> -->
+    <arg name="verbose" default="false"/>
+  </include>
+
+  <group ns="$(arg mav_name)">
+    <include file="$(find rotors_gazebo)/launch/spawn_mav.launch">
+      <arg name="mav_name" value="$(arg mav_name)" />
+      <arg name="model" value="$(find ewok_simulation)/urdf/mav_r200.gazebo" />
+      <arg name="enable_logging" value="$(arg enable_logging)" />
+      <arg name="enable_ground_truth" value="$(arg enable_ground_truth)" />
+      <arg name="log_file" value="$(arg log_file)"/>
+      <arg name="x" value="$(arg start_x)"/>
+      <arg name="y" value="$(arg start_y)"/>
+    </include>
+    <node name="bspline_lee_position_controller_node" pkg="ewok_simulation" type="bspline_lee_position_controller_node" output="screen">
+      <rosparam command="load" file="$(find rotors_gazebo)/resource/lee_controller_$(arg mav_name).yaml" />
+      <rosparam command="load" file="$(find rotors_gazebo)/resource/$(arg mav_name).yaml" />
+      <remap from="odometry" to="odometry_sensor1/odometry" />
+    </node>
+
+    <node name="trajectory_replanning_example" pkg="ewok_simulation" type="trajectory_replanning_example" output="screen">
+      <param name="start_x" value="$(arg start_x)" />
+      <param name="start_y" value="$(arg start_y)" />
+      <param name="start_z" value="$(arg start_z)" />
+      <param name="start_yaw" value="$(arg start_yaw)" />
+
+      <param name="middle_x" value="$(arg middle_x)" />
+      <param name="middle_y" value="$(arg middle_y)" />
+      <param name="middle_z" value="$(arg middle_z)" />
+      <param name="middle_yaw" value="$(arg middle_yaw)" />
+
+      <param name="stop_x" value="$(arg stop_x)" />
+      <param name="stop_y" value="$(arg stop_y)" />
+      <param name="stop_z" value="$(arg stop_z)" />
+      <param name="stop_yaw" value="$(arg stop_yaw)" />
+    </node>
+
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  </group>
+</launch>
