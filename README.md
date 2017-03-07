@@ -15,7 +15,7 @@ Follow the tutorials to [install ROS Kinetic](http://wiki.ros.org/ROS/Installati
 
 Install additional dependencies:
 ```
-sudo apt-get install libeigen3-dev libsuitesparse-dev ros-kinetic-octomap ros-kinetic-octomap-rviz-plugins
+sudo apt-get install libeigen3-dev libsuitesparse-dev protobuf-compiler libnlopt-dev ros-kinetic-octomap ros-kinetic-octomap-rviz-plugins ros-kinetic-octomap-ros ros-kinetic-sophus
 ```
 
 Navigate to the source folder of your catkin workspace, download and build the software:
@@ -25,6 +25,7 @@ git clone https://github.com/catkin/catkin_simple.git
 git clone https://github.com/ethz-asl/rotors_simulator.git
 git clone https://github.com/ethz-asl/mav_comm.git
 git clone https://github.com/vsu91/ewok.git
+cd ../
 catkin_make
 ```
 
