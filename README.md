@@ -7,7 +7,7 @@ For more information see
 If you use this code, please cite the respective publications:
 * **Real-Time Trajectory Replanning for MAVs using Uniform B-splines and 3D Circular Buffer**, V. Usenko, L. von Stumberg, A. Pangercic, D. Cremers, In [arXiv:1703.01416](https://arxiv.org/abs/1703.01416), 2017
 
-### 2. Installation
+### 2.a Installation
 
 The system has been tested with Ubuntu 16.04 and ROS Kinetic. The mapping package (`ewok_ring_buffer`) has been tested with Ubuntu 14.04 and ROS Indigo (just install corresponding `ros-indigo-*` plugins)
 
@@ -37,6 +37,9 @@ git clone https://github.com/vsu91/ewok.git
 cd ../
 catkin_make
 ```
+### 2.b External dataset (Optional)
+
+Some of the provided examples (trajectory_replanning_big_forest.launch) depend on the forest_gen dataset. Please follow the instructions provided here to download and install the dataset: https://github.com/ethz-asl/forest_gen
 
 ### 3. Simulation example
 In separate terminal windows:
