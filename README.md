@@ -24,6 +24,7 @@ cd ~/catkin_ws/src
 git clone https://github.com/vsu91/ewok.git
 cd ewok
 git submodule init
+git submodule update
 
 cd ../../
 catkin_make

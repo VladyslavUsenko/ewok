@@ -7,3 +7,6 @@
 [submodule "mav_comm"]
 	path = mav_comm
 	url = https://github.com/ethz-asl/mav_comm.git
+[submodule "forest_gen"]
+	path = forest_gen
+	url = https://github.com/ethz-asl/forest_gen.git
