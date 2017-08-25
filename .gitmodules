@@ -1,0 +1,9 @@
+[submodule "catkin_simple"]
+	path = catkin_simple
+	url = https://github.com/catkin/catkin_simple.git
+[submodule "rotors_simulator"]
+	path = rotors_simulator
+	url = https://github.com/ethz-asl/rotors_simulator.git
+[submodule "mav_comm"]
+	path = mav_comm
+	url = https://github.com/ethz-asl/mav_comm.git
