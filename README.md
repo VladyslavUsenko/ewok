@@ -9,7 +9,7 @@ If you use this code, please cite the respective publications:
 
 ### 2 Installation
 
-The system has been tested with Ubuntu 16.04 and ROS Kinetic. The mapping package (`ewok_ring_buffer`) has been tested with Ubuntu 14.04 and ROS Indigo (just install corresponding `ros-indigo-*` plugins)
+The system has been tested with Ubuntu 16.04 and ROS Kinetic.
 
 Follow the tutorials to [install ROS Kinetic](http://wiki.ros.org/ROS/Installation) and to [set up catkin workspace](http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment).
 
