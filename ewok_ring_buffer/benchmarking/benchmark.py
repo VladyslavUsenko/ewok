@@ -8,7 +8,7 @@ import associate
 import matplotlib.pyplot as plt
 import numpy as np
 
-dataset_url = 'http://filecremers3.informatik.tu-muenchen.de/rgbd/dataset/freiburg2/rgbd_dataset_freiburg2_pioneer_slam.tgz'
+dataset_url = 'https://vision.in.tum.de/rgbd/dataset/freiburg2/rgbd_dataset_freiburg2_pioneer_slam.tgz'
 filename_zip = 'rgbd_dataset_freiburg2_pioneer_slam.tgz'
 filename = 'rgbd_dataset_freiburg2_pioneer_slam'
 
