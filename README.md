@@ -5,23 +5,23 @@ For more information see
 
 ### 1. Related Papers
 If you use this code, please cite the respective publications:
-* **Real-Time Trajectory Replanning for MAVs using Uniform B-splines and 3D Circular Buffer**, V. Usenko, L. von Stumberg, A. Pangercic, D. Cremers, In [arXiv:1703.01416](https://arxiv.org/abs/1703.01416), 2017
+* **Real-Time Trajectory Replanning for MAVs using Uniform B-splines and 3D Circular Buffer**, V. Usenko, L. von Stumberg, A. Pangercic, D. Cremers, In 2017 International Conference on Intelligent Robots and Systems (IROS) [[DOI:10.1109/IROS.2017.8202160]](https://doi.org/10.1109/IROS.2017.8202160) [[arXiv:1703.01416]](https://arxiv.org/abs/1703.01416).
 
 ### 2 Installation
 
-The system has been tested with Ubuntu 16.04 and ROS Kinetic.
+The system has been tested with Ubuntu 16.04 (ROS Kinetic).
 
 Follow the tutorials to [install ROS Kinetic](http://wiki.ros.org/ROS/Installation) and to [set up catkin workspace](http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment).
 
 Install additional dependencies:
 ```
-sudo apt-get install libeigen3-dev libsuitesparse-dev protobuf-compiler libnlopt-dev ros-kinetic-octomap ros-kinetic-octomap-rviz-plugins ros-kinetic-octomap-ros ros-kinetic-sophus
+sudo apt-get install libeigen3-dev libsuitesparse-dev protobuf-compiler libnlopt-dev ros-kinetic-octomap ros-kinetic-octomap-rviz-plugins ros-kinetic-octomap-ros ros-kinetic-sophus libatlas-base-dev
 ```
 
 Navigate to the source folder of your catkin workspace, download and build the software:
 ```
 cd ~/catkin_ws/src
-git clone https://github.com/vsu91/ewok.git
+git clone https://github.com/VladyslavUsenko/ewok.git
 cd ewok
 git submodule init
 git submodule update
