@@ -17,13 +17,13 @@ Follow the tutorials to [install ROS Kinetic](http://wiki.ros.org/ROS/Installati
 
 Install additional dependencies:
 ```
-sudo apt-get install libeigen3-dev libsuitesparse-dev protobuf-compiler libnlopt-dev ros-kinetic-octomap ros-kinetic-octomap-rviz-plugins ros-kinetic-octomap-ros ros-kinetic-sophus libatlas-base-dev
+sudo apt-get install libeigen3-dev libsuitesparse-dev protobuf-compiler libnlopt-dev ros-kinetic-octomap ros-kinetic-octomap-rviz-plugins ros-kinetic-octomap-ros ros-kinetic-sophus libatlas-base-dev python-matplotlib python-numpy
 ```
 
 Navigate to the source folder of your catkin workspace, download and build the software:
 ```
 cd ~/catkin_ws/src
-git clone https://github.com/VladyslavUsenko/ewok.git
+git clone -b ubuntu_16_04_kinetic https://github.com/VladyslavUsenko/ewok.git
 cd ewok
 git submodule init
 git submodule update
