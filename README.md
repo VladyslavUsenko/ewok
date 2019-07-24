@@ -3,7 +3,7 @@
 For more information see
 [https://vision.in.tum.de/research/robotvision/replanning](https://vision.in.tum.de/research/robotvision/replanning)
 
-![teaser](ewok.gif)
+[![teaser](ewok.gif)](https://www.youtube.com/watch?v=jh6tMHjxHSY)
 
 ### 1. Related Papers
 If you use this code, please cite the respective publications:
