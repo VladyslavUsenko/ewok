@@ -10,3 +10,6 @@
 [submodule "forest_gen"]
 	path = forest_gen
 	url = https://github.com/ethz-asl/forest_gen.git
+[submodule "octomap_rviz_plugins"]
+	path = octomap_rviz_plugins
+	url = https://github.com/OctoMap/octomap_rviz_plugins.git
