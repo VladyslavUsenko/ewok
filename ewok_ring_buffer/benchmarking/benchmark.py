@@ -45,14 +45,21 @@ os.system('rosrun ewok_ring_buffer tum_rgbd_ring_buffer_example rgbd_dataset_fre
 
 print 'Results are ready.'
 
+
 data = np.loadtxt('res.txt')
 
 plt.figure()
+plt.title('Insertion time for Ring Buffer [ms]')
 plt.hist(data[:,0]/1e6, 100)
+
 plt.figure()
+plt.title('SDF computation for Ring Buffer [ms]')
 plt.hist(data[:,1]/1e6, 100)
+
 plt.figure()
+plt.title('Insertion time for Octomap [ms]')
 plt.hist(data[:,2]/1e6, 100)
+
 plt.show()
 
 print 'Done.'

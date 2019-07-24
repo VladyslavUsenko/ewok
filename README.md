@@ -9,13 +9,13 @@ If you use this code, please cite the respective publications:
 
 ### 2 Installation
 
-The system has been tested with Ubuntu 16.04 (ROS Kinetic).
+The system has been tested with Ubuntu 18.04 (ROS Melodic). For Ubuntu 16.04 (ROS Kinetic) switch to `ubuntu_16_04_kinetic` branch.
 
-Follow the tutorials to [install ROS Kinetic](http://wiki.ros.org/ROS/Installation) and to [set up catkin workspace](http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment).
+Follow the tutorials to [install ROS Melodic](http://wiki.ros.org/ROS/Installation) and to [set up catkin workspace](http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment).
 
 Install additional dependencies:
 ```
-sudo apt-get install libeigen3-dev libsuitesparse-dev protobuf-compiler libnlopt-dev ros-kinetic-octomap ros-kinetic-octomap-rviz-plugins ros-kinetic-octomap-ros ros-kinetic-sophus libatlas-base-dev
+sudo apt-get install libeigen3-dev libsuitesparse-dev protobuf-compiler libnlopt-dev ros-melodic-octomap ros-melodic-octomap-ros ros-melodic-sophus libatlas-base-dev python-matplotlib python-numpy
 ```
 
 Navigate to the source folder of your catkin workspace, download and build the software:
