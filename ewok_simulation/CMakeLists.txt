@@ -3,7 +3,7 @@ project(ewok_simulation)
 
 set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH}" "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
-add_definitions(-std=c++11 -g -O3 -ftree-vectorize -march=native)
+add_definitions(-std=c++11 -g -O3)
 
 find_package(catkin_simple REQUIRED)
 find_package(Eigen3 REQUIRED)
