@@ -3,6 +3,8 @@
 For more information see
 [https://vision.in.tum.de/research/robotvision/replanning](https://vision.in.tum.de/research/robotvision/replanning)
 
+![teaser](ewok.gif)
+
 ### 1. Related Papers
 If you use this code, please cite the respective publications:
 * **Real-Time Trajectory Replanning for MAVs using Uniform B-splines and 3D Circular Buffer**, V. Usenko, L. von Stumberg, A. Pangercic, D. Cremers, In 2017 International Conference on Intelligent Robots and Systems (IROS) [[DOI:10.1109/IROS.2017.8202160]](https://doi.org/10.1109/IROS.2017.8202160) [[arXiv:1703.01416]](https://arxiv.org/abs/1703.01416).
