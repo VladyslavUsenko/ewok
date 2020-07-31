@@ -28,7 +28,6 @@
 #include <fstream>
 #include <Eigen/Dense>
 #include <Eigen/Sparse>
-#include <sophus/se3.hpp>
 
 #include <Eigen/IterativeLinearSolvers>
 #include <Eigen/CholmodSupport>
