@@ -200,6 +200,11 @@ class RingBufferBase {
       m.pose.position.y = offset_point.y();
       m.pose.position.z = offset_point.z();
 
+      m.pose.orientation.x = 0;
+      m.pose.orientation.y = 0;
+      m.pose.orientation.z = 0;
+      m.pose.orientation.w = 1;
+
       m.color.r = color(0);
       m.color.g = color(1);
       m.color.b = color(2);
