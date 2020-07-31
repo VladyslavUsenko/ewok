@@ -217,9 +217,14 @@ class UniformBSpline3D {
     traj_marker.type = visualization_msgs::Marker::LINE_STRIP;
     traj_marker.action = visualization_msgs::Marker::MODIFY;
     traj_marker.scale.x = scale;
-    traj_marker.scale.y = scale;
-    traj_marker.scale.z = scale;
+    //traj_marker.scale.y = scale;
+    //traj_marker.scale.z = scale;
     traj_marker.color.a = 1.0;
+
+    traj_marker.pose.orientation.x = 0;
+    traj_marker.pose.orientation.y = 0;
+    traj_marker.pose.orientation.z = 0;
+    traj_marker.pose.orientation.w = 1;
 
     traj_marker.lifetime = lifetime;
 
@@ -266,7 +271,7 @@ class UniformBSpline3D {
   void getControlPointsMarker(visualization_msgs::Marker & traj_marker, const std::string & ns,
                               int id, const Eigen::Vector3d & color, int fixed_id = -N, int num_points = 0,
                               const Eigen::Vector3d & fixed_color = Eigen::Vector3d(1,1,1),
-                              const ros::Duration & lifetime = ros::Duration(0), _Scalar scale = 0.1) {
+                              const ros::Duration & lifetime = ros::Duration(0), _Scalar scale = 1) {
     traj_marker.header.frame_id = "world";
     traj_marker.ns = ns;
     traj_marker.id = id;
@@ -276,6 +281,11 @@ class UniformBSpline3D {
     traj_marker.scale.y = scale;
     traj_marker.scale.z = scale;
     traj_marker.color.a = 1.0;
+
+    traj_marker.pose.orientation.x = 0;
+    traj_marker.pose.orientation.y = 0;
+    traj_marker.pose.orientation.z = 0;
+    traj_marker.pose.orientation.w = 1;
 
     traj_marker.lifetime = lifetime;
 
