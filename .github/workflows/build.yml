@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Create Catkin Workspace
         run: |
-          source /opt/ros/noetic/setup.bash
+          bash /opt/ros/noetic/setup.bash
           pwd
           mkdir catkin_ws
           cd catkin_ws
