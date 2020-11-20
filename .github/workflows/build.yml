@@ -21,9 +21,12 @@ jobs:
          
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          submodules: recursive
         
       - name: Build code
         run: |
+          bash
           sh /opt/ros/noetic/setup.sh 
           mkdir -p ~/catkin_ws/src
           cd ~/catkin_ws
