@@ -4,8 +4,8 @@ on: push
 
 jobs:
   build-focal:
-    name: Lint code base
-    runs-on: ubuntu-latest
+    name: Build with Ubuntu 20.04 and ROS Noetic
+    runs-on: ubuntu-20.04
 
     steps:
       - name: Install ROS
