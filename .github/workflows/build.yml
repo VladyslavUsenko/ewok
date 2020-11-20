@@ -28,7 +28,7 @@ jobs:
           source /opt/ros/noetic/setup.bash 
           mkdir -p ~/catkin_ws/src
           cd ~/catkin_ws/src
-          ln -s $CI_SOURCE_PATH .
+          ln -s $SRC_DIR .
           ls
           cd ..
           catkin_make
