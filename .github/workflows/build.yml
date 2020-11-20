@@ -20,8 +20,9 @@ jobs:
           mkdir catkin_ws
           cd catkin_ws
           mkdir src
-          catkin_init
+          catkin_init_workspace
           cd src
+          pwd
       - name: Checkout code
         uses: actions/checkout@v2
 
