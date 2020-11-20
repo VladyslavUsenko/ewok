@@ -17,18 +17,18 @@ jobs:
       - name: Install Dependencies
         run: |
           apt-get update
-          apt-get install -y libeigen3-dev libsuitesparse-dev protobuf-compiler libnlopt-dev ros-noetic-octomap ros-noetic-octomap-ros libatlas-base-dev python3-matplotlib python3-numpy
+          apt-get install -y libeigen3-dev libsuitesparse-dev protobuf-compiler libnlopt-dev ros-noetic-octomap ros-noetic-octomap-ros libatlas-base-dev python3-matplotlib python3-numpy git
          
       - name: Checkout code
         uses: actions/checkout@v2
         
       - name: Build code
         run: |
-          source /opt/ros/noetic/setup.bash
+          sh /opt/ros/noetic/setup.sh 
           mkdir -p ~/catkin_ws/src
           cd ~/catkin_ws
-          catkin build
-          source devel/setup.bash
+          catkin_make
+          sh devel/setup.sh
           cd ~/catkin_ws/src
           ln -s $CI_SOURCE_PATH
           cd ..
