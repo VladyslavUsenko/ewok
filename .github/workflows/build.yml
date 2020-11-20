@@ -32,9 +32,9 @@ jobs:
           mkdir -p ~/catkin_ws/src
           cd ~/catkin_ws
           catkin_init_workspace
-          source devel/setup.bash
-          cd ~/catkin_ws/src
+          cd src
           ln -s $CI_SOURCE_PATH
+          ls
           cd ..
           catkin_make
 
