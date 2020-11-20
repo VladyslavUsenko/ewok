@@ -30,9 +30,7 @@ jobs:
           cd ..
           source /opt/ros/noetic/setup.bash 
           mkdir -p ~/catkin_ws/src
-          cd ~/catkin_ws
-          catkin_init_workspace
-          cd src
+          cd ~/catkin_ws/src
           ln -s $CI_SOURCE_PATH
           ls
           cd ..
