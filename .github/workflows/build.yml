@@ -9,9 +9,6 @@ jobs:
     
     container:
       image: osrf/ros:noetic-desktop-full
-
-    env:
-       CI_SOURCE_PATH: $(pwd)
        
     steps:
       - name: Install Dependencies
@@ -27,11 +24,11 @@ jobs:
       - name: Build code
         shell: bash
         run: |
-          cd ..
+          SRC_DIR=$(pwd)
           source /opt/ros/noetic/setup.bash 
           mkdir -p ~/catkin_ws/src
           cd ~/catkin_ws/src
-          ln -s $CI_SOURCE_PATH
+          ln -s $CI_SOURCE_PATH .
           ls
           cd ..
           catkin_make
