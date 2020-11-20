@@ -14,7 +14,7 @@ jobs:
       - name: Install Dependencies
         run: |
           apt-get update
-          apt-get install -y git python libeigen3-dev libgoogle-glog-dev libsuitesparse-dev protobuf-compiler libnlopt-dev ros-noetic-octomap ros-noetic-octomap-ros ros-noetic-octomap-msgs libatlas-base-dev python3-matplotlib python3-numpy ros-noetic-tf-conversions ros-noetic-eigen-conversions
+          apt-get install -y git python libeigen3-dev libgoogle-glog-dev libsuitesparse-dev protobuf-compiler libnlopt-dev libnlopt-cxx-dev ros-noetic-octomap ros-noetic-octomap-ros ros-noetic-octomap-msgs libatlas-base-dev python3-matplotlib python3-numpy ros-noetic-tf-conversions ros-noetic-eigen-conversions
          
       - name: Checkout code
         uses: actions/checkout@v2
