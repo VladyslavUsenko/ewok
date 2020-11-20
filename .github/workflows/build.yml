@@ -26,7 +26,8 @@ jobs:
         
       - name: Build code
         run: |
-          bash
+          pwd
+          ls
           sh /opt/ros/noetic/setup.sh 
           mkdir -p ~/catkin_ws/src
           cd ~/catkin_ws
