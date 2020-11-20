@@ -25,14 +25,14 @@ jobs:
           submodules: recursive
         
       - name: Build code
+        shell: bash
         run: |
-          pwd
-          ls
-          sh /opt/ros/noetic/setup.sh 
+          cd ..
+          bash /opt/ros/noetic/setup.bash 
           mkdir -p ~/catkin_ws/src
           cd ~/catkin_ws
           catkin_make
-          sh devel/setup.sh
+          bash devel/setup.bash
           cd ~/catkin_ws/src
           ln -s $CI_SOURCE_PATH
           cd ..
