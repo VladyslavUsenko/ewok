@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Create Catkin Workspace
         run: |
+          sudo apt-get update
+          sudo apt-get install libeigen3-dev libsuitesparse-dev protobuf-compiler libnlopt-dev ros-noetic-octomap ros-noetic-octomap-ros libatlas-base-dev python-matplotlib python-numpy
           bash /opt/ros/noetic/setup.bash
           pwd
           mkdir catkin_ws
