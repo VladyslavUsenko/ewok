@@ -10,19 +10,27 @@ jobs:
     container:
       image: osrf/ros:noetic-desktop-full
 
+    env:
+       CI_SOURCE_PATH: $(pwd)
+       
     steps:
-      - name: Create Catkin Workspace
+      - name: Install Dependencies
         run: |
           apt-get update
-          apt-get install -y libeigen3-dev libsuitesparse-dev protobuf-compiler libnlopt-dev ros-noetic-octomap ros-noetic-octomap-ros libatlas-base-dev python3-matplotlib python3-numpy
-          bash /opt/ros/noetic/setup.bash
-          pwd
-          mkdir catkin_ws
-          cd catkin_ws
-          mkdir src
-          catkin_init_workspace
-          cd src
-          pwd
+          apt-get install -y libeigen3-dev libsuitesparse-dev protobuf-compiler libnlopt-dev ros-noetic-octomap ros-noetic-octomap-ros libatlas-base-dev python3-matplotlib python3-numpy python-catkin-tools
+         
       - name: Checkout code
         uses: actions/checkout@v2
+        
+      - name: Build code
+        run: |
+          source /opt/ros/noetic/setup.bash
+          mkdir -p ~/catkin_ws/src
+          cd ~/catkin_ws
+          catkin build
+          source devel/setup.bash
+          cd ~/catkin_ws/src
+          ln -s $CI_SOURCE_PATH
+          cd ..
+          catkin build
 
