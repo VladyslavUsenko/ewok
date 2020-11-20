@@ -10,17 +10,16 @@ jobs:
     steps:
       - name: Install ROS
         run: |
-        sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-        sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-        sudo apt update
-        sudo apt install ros-noetic-desktop-full
-        source /opt/ros/noetic/setup.bash
-        mkdir catkin_ws
-        cd catkin_ws
-        mkdir src
-        catkin_init
-        cd src
+          sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+          sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+          sudo apt update
+          sudo apt install ros-noetic-desktop-full
+          source /opt/ros/noetic/setup.bash
+          mkdir catkin_ws
+          cd catkin_ws
+          mkdir src
+          catkin_init
+          cd src
       - name: Checkout code
         uses: actions/checkout@v2
-        submodules: 'recursive'
 
