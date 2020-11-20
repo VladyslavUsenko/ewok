@@ -28,11 +28,11 @@ jobs:
         shell: bash
         run: |
           cd ..
-          bash /opt/ros/noetic/setup.bash 
+          source /opt/ros/noetic/setup.bash 
           mkdir -p ~/catkin_ws/src
           cd ~/catkin_ws
           catkin_make
-          bash devel/setup.bash
+          source devel/setup.bash
           cd ~/catkin_ws/src
           ln -s $CI_SOURCE_PATH
           cd ..
