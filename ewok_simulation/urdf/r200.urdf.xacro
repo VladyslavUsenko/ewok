@@ -151,6 +151,6 @@
     <link name="${prefix}/camera_depth_optical_frame"/>
   	
   	<!-- Simulation sensor -->
-    <turtlebot_sim_3dsensor prefix="${prefix}" />
+    <xacro:turtlebot_sim_3dsensor prefix="${prefix}" />
   </xacro:macro>
 </robot>

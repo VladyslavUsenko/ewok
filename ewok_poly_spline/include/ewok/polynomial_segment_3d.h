@@ -102,9 +102,14 @@ class PolynomialSegment3D {
     traj_marker.type = visualization_msgs::Marker::LINE_STRIP;
     traj_marker.action = visualization_msgs::Marker::MODIFY;
     traj_marker.scale.x = scale;
-    traj_marker.scale.y = scale;
-    traj_marker.scale.z = scale;
+    //traj_marker.scale.y = scale;
+    //traj_marker.scale.z = scale;
     traj_marker.color.a = 1.0;
+
+    traj_marker.pose.orientation.x = 0;
+    traj_marker.pose.orientation.y = 0;
+    traj_marker.pose.orientation.z = 0;
+    traj_marker.pose.orientation.w = 1;
 
     traj_marker.lifetime = lifetime;
 

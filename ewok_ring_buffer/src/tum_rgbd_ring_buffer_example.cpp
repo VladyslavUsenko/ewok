@@ -28,8 +28,6 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 
-#include <sophus/se3.hpp>
-
 #include <octomap/OcTree.h>
 #include <octomap_msgs/conversions.h>
 
@@ -72,17 +70,22 @@ public:
 
 			timestamps.push_back(timestamp);
 			depth_image_files.push_back(depth_name);
-			poses.push_back(Sophus::SE3f(quaternion, translation));
+
+			Eigen::Matrix4f p;
+			p.setIdentity();
+			p.block<3,3>(0,0) = quaternion.matrix();
+			p.col(3).head<3>() = translation;
+			poses.push_back(p.matrix());
 		}
 		std::cout << "Loaded " << depth_image_files.size() << " images" << std::endl;
 	}
 
 	cv::Mat get_d(int i) {
 			return cv::imread(path + depth_image_files[i],
-					CV_LOAD_IMAGE_UNCHANGED);
+					cv::IMREAD_UNCHANGED);
 	}
 	Eigen::Matrix4f get_pose(int i) {
-		return poses[i].matrix();
+		return poses[i];
 	}
 	std::string get_timestamp(int i) {
 		return timestamps[i];
@@ -94,7 +97,7 @@ private:
 	std::string path;
 	std::vector<std::string> depth_image_files;
 	std::vector<std::string> timestamps;
-	std::vector<Sophus::SE3f> poses;
+	std::vector<Eigen::Matrix4f> poses;
 	Eigen::Vector4f intrinsics;
 };
 
