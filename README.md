@@ -17,11 +17,11 @@ Follow the tutorials to [install ROS Noetic for 20.04 or ROS Melodic for 18.04 (
 
 Install dependencies. For Ubuntu 20.04 (ROS Noetic):
 ```
-sudo apt-get install git python3 python3-matplotlib python3-numpy libeigen3-dev libgoogle-glog-dev libatlas-base-dev libsuitesparse-dev protobuf-compiler libnlopt-dev libnlopt-cxx-dev ros-noetic-octomap ros-noetic-octomap-ros ros-noetic-octomap-msgs ros-noetic-tf-conversions ros-noetic-eigen-conversions
+sudo apt-get install git python python3-matplotlib python3-numpy libeigen3-dev libgoogle-glog-dev libatlas-base-dev libsuitesparse-dev protobuf-compiler libnlopt-dev libnlopt-cxx-dev ros-noetic-octomap ros-noetic-octomap-ros ros-noetic-octomap-msgs ros-noetic-tf-conversions ros-noetic-eigen-conversions
 ```
 For Ubuntu 18.04 (ROS Melodic):
 ```
-sudo apt-get install git python3 python3-matplotlib python3-numpy libeigen3-dev libgoogle-glog-dev libatlas-base-dev libsuitesparse-dev protobuf-compiler libnlopt-dev ros-melodic-octomap ros-melodic-octomap-ros ros-melodic-octomap-msgs ros-melodic-tf-conversions ros-melodic-eigen-conversions
+sudo apt-get install git python3-matplotlib python3-numpy libeigen3-dev libgoogle-glog-dev libatlas-base-dev libsuitesparse-dev protobuf-compiler libnlopt-dev ros-melodic-octomap ros-melodic-octomap-ros ros-melodic-octomap-msgs ros-melodic-tf-conversions ros-melodic-eigen-conversions
 ```
 
 Navigate to the source folder of your catkin workspace, download and build the software:
