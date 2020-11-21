@@ -29,7 +29,7 @@ jobs:
           mkdir -p ~/catkin_ws/src
           cd ~/catkin_ws/src
           ln -s $SRC_DIR .
-          ls
           cd ..
           catkin_make
-
+          source devel/setup.bash
+          roscd ewok_simulation
