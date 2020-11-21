@@ -1,0 +1,63 @@
+name: Build
+
+on: push
+
+jobs:
+  build-focal:
+    name: Build with Ubuntu 20.04 and ROS Noetic
+    runs-on: ubuntu-latest
+    container:
+      image: osrf/ros:noetic-desktop-full
+    steps:
+      - name: Install Dependencies
+        run: |
+          apt-get update
+          apt-get install -y git python python3-matplotlib python3-numpy libeigen3-dev libgoogle-glog-dev libatlas-base-dev libsuitesparse-dev protobuf-compiler libnlopt-dev libnlopt-cxx-dev ros-noetic-octomap ros-noetic-octomap-ros ros-noetic-octomap-msgs ros-noetic-tf-conversions ros-noetic-eigen-conversions
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+        
+      - name: Build code
+        shell: bash
+        run: |
+          SRC_DIR=$(pwd)
+          source /opt/ros/noetic/setup.bash 
+          mkdir -p ~/catkin_ws/src
+          cd ~/catkin_ws/src
+          ln -s $SRC_DIR .
+          cd ..
+          catkin_make
+          source devel/setup.bash
+          roscd ewok_simulation
+
+  build-bionic:
+    name: Build with Ubuntu 18.04 and ROS Melodic
+    runs-on: ubuntu-latest
+    container:
+      image: osrf/ros:melodic-desktop-full
+    steps:
+      - name: Install Dependencies
+        run: |
+          apt-get update
+          apt-get install -y software-properties-common
+          add-apt-repository ppa:git-core/ppa
+          apt-get update
+          apt-get install -y git python3-matplotlib python3-numpy libeigen3-dev libgoogle-glog-dev libatlas-base-dev libsuitesparse-dev protobuf-compiler libnlopt-dev ros-melodic-octomap ros-melodic-octomap-ros ros-melodic-octomap-msgs ros-melodic-tf-conversions ros-melodic-eigen-conversions
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+        
+      - name: Build code
+        shell: bash
+        run: |
+          SRC_DIR=$(pwd)
+          source /opt/ros/melodic/setup.bash 
+          mkdir -p ~/catkin_ws/src
+          cd ~/catkin_ws/src
+          ln -s $SRC_DIR .
+          cd ..
+          catkin_make
+          source devel/setup.bash
+          roscd ewok_simulation
