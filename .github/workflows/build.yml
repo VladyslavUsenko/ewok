@@ -41,7 +41,7 @@ jobs:
       - name: Install Dependencies
         run: |
           apt-get update
-          apt-get install software-properties-common
+          apt-get install -y software-properties-common
           add-apt-repository ppa:git-core/ppa
           apt-get update
           apt-get install -y git python libeigen3-dev libgoogle-glog-dev libsuitesparse-dev protobuf-compiler libnlopt-dev ros-melodic-octomap ros-melodic-octomap-ros ros-melodic-octomap-msgs libatlas-base-dev python3-matplotlib python3-numpy ros-melodic-tf-conversions ros-melodic-eigen-conversions
