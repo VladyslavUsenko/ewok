@@ -271,7 +271,7 @@ class UniformBSpline3D {
   void getControlPointsMarker(visualization_msgs::Marker & traj_marker, const std::string & ns,
                               int id, const Eigen::Vector3d & color, int fixed_id = -N, int num_points = 0,
                               const Eigen::Vector3d & fixed_color = Eigen::Vector3d(1,1,1),
-                              const ros::Duration & lifetime = ros::Duration(0), _Scalar scale = 1) {
+                              const ros::Duration & lifetime = ros::Duration(0), _Scalar scale = 0.1) {
     traj_marker.header.frame_id = "world";
     traj_marker.ns = ns;
     traj_marker.id = id;
