@@ -3,7 +3,7 @@ project(ewok_ring_buffer)
 
 set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH}" "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
-add_definitions(-std=c++11 -g -O3 -ftree-vectorize -march=native)
+add_definitions(-O3 -ftree-vectorize -march=native)
 
 find_package(catkin_simple REQUIRED)
 find_package(Eigen3 REQUIRED)
